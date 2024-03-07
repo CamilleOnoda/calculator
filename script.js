@@ -20,6 +20,33 @@ document.addEventListener('DOMContentLoaded', function() {
       function clearDisplay() {
         display.value = '';
       }
+
+      function calculate() {
+        let expression = display.value;
+        let regex = /(\d+)([\+\-\*\/])(\d+)/;
+        let match = expression.match(regex);
+        if (match) {
+          let num1 = parseFloat(match[1]);
+          let operator = match[2];
+          let num2 = parseFloat(match[3]);
+          let result;
+          switch (operator) {
+            case '+':
+              result = add(num1, num2);
+              break;
+            case '-':
+              result = subtract(num1, num2);
+              break;
+            case '*':
+              result = multiply(num1, num2);
+              break;
+            case '/':
+              result = divide(num1, num2);
+              break;
+          }
+          display.value = result;
+        }
+      }
     
 
 });
