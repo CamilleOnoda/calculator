@@ -10,4 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
 
+    clearButton.addEventListener('click', clearDisplay);
+    equalButton.addEventListener('click', calculate);
+
+    function addToDisplay(value) {
+        display.value += value;
+      }
+    
+      function clearDisplay() {
+        display.value = '';
+      }
+    
+
 });
