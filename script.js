@@ -4,5 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearButton = document.querySelector('#clear');
     const equalButton = document.querySelector('#equal');
   
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          addToDisplay(button.value);
+        });
+      });
 
 });
